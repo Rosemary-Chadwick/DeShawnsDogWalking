@@ -1,7 +1,11 @@
-import { Navbar, NavbarBrand, Nav, NavItem, NavLink } from "reactstrap";
-import "./App.css";
-import "bootstrap/dist/css/bootstrap.css";
-
+import { 
+  Navbar, 
+  NavbarBrand, 
+  Nav, 
+  NavItem, 
+  NavLink 
+} from "reactstrap";
+import { Link } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 
 function App() {
@@ -10,9 +14,15 @@ function App() {
       <>
         <Navbar color="light" expand="md">
           <Nav navbar>
-            <NavbarBrand href="/">🐕‍🦺 🐩 DeShawn's Dog Walking</NavbarBrand>
+            <NavbarBrand tag={Link} to="/">🐕‍🦺 🐩 DeShawn's Dog Walking</NavbarBrand>
             <NavItem>
-              <NavLink href="/walkers">Walkers</NavLink>
+              <NavLink tag={Link} to="/">Dogs</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink tag={Link} to="/walkers">Walkers</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink tag={Link} to="/cities">Cities</NavLink>
             </NavItem>
           </Nav>
         </Navbar>
